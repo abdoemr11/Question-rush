@@ -1,5 +1,9 @@
-export const Answer = () => {
+export const Answer = (answer) => {
     return (
-        <p>this is answer text</p>
+        <div>
+            <p>this is answer text</p>
+            <p>{answer.answerText}</p>
+        </div>
+
    );
 }

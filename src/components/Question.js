@@ -1,4 +1,5 @@
 import { AddAnswer } from "./AddAnswer";
+import { Answer } from "./Answer";
 
 export const Question = ({question, answers}) =>{
 
@@ -8,7 +9,7 @@ export const Question = ({question, answers}) =>{
             <div>
                 <p>{question.questionText}</p>
                 {/* answers */}
-                {answers.map(ans=><An)}
+                {answers.map(ans=><Answer answer={ans}/>)}
                 <AddAnswer/>
             </div>
             
