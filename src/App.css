@@ -57,6 +57,15 @@ body {
 }
 .question .answer {
   border-bottom: 2px solid var(--secondary-color) ;
+  position: relative;
+}
+.question .answer button {
+	background-color: transparent;
+	border: none;
+	font-size: 2rem;
+	position: absolute;
+	top:0;
+	right: 0;
 }
 .question .add-answer {
 	display: flex;

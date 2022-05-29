@@ -30,11 +30,10 @@ export const Questions = ({isAuth}) => {
         }
         const getAns = async() => {
             const retrivedAnswers = await getDocs(answerReference);
-            setQuestions(retrivedAnswers.docs.map((ans) => ({...ans.data(), id:ans.id}) ));
+            setAnswers(retrivedAnswers.docs.map((ans) => ({...ans.data(), id:ans.id}) ));
         }
-        // getQuest();
-        setQuestions(dummy_question);
-        setAnswers(dummy_answer);
+        getQuest();
+        getAns();
 
     }, []);
     return(

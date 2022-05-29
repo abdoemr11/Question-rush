@@ -1,9 +1,20 @@
+import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
+import { auth, db } from "../firebase-config";
 
-export const AddAnswer = ({isAuth}) => {
+export const AddAnswer = ({isAuth, id}) => {
     const [answerText, setAnswerText] = useState('');
     const sumbitAnswer = async () => {
-
+        const docRef = collection(db, "answers");
+        await addDoc(docRef, {
+            questionId: id,
+            answerText,
+            author: {
+                name: auth.currentUser.displayName, 
+                id: auth.currentUser.uid
+            }
+        })
+        console.log('click the submit button');
     }
     if(isAuth)
         return(

@@ -9,8 +9,8 @@ export const Question = ({question, answers, isAuth}) =>{
             <div>
                 <p>{question.questionText}</p>
                 {/* answers */}
-                {answers.map((ans,i)=><Answer answer={ans} index={i}/>)}
-                <AddAnswer isAuth={isAuth}/>
+                {answers.map((ans,i)=><Answer answer={ans} index={i} isAuth={isAuth}/>)}
+                <AddAnswer isAuth={isAuth} id={question.id}/>
             </div>
             
         </div>
