@@ -1,7 +1,7 @@
-export const Answer = (answer) => {
+export const Answer = ({answer, index}) => {
     return (
-        <div>
-            <p>this is answer text</p>
+        <div className="answer">
+            <h3>Answer {index}</h3>
             <p>{answer.answerText}</p>
         </div>
 

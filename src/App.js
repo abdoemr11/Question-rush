@@ -17,7 +17,7 @@ function App() {
     signOut(auth).then(()=>{
       localStorage.clear();
       setIsAuth(false);
-      
+      window.location.replace('/');
 
     })
   }
@@ -37,7 +37,7 @@ function App() {
     </div>
 
       <Routes>
-        <Route path="/" element={<Questions/>}/>
+        <Route path="/" element={<Questions isAuth={isAuth}/>}/>
         <Route path="/login" element={<Login setIsAuth={setIsAuth}/>}/>
 
         <Route path="/addquestion" element={<AddQuestion auth={auth} isAuth={isAuth}/>}/>

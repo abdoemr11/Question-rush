@@ -7,7 +7,7 @@ export const AddAnswer = ({isAuth}) => {
     }
     if(isAuth)
         return(
-            <div>
+            <div className="add-answer">
 
                 <label htmlFor="answer_text">Write your answer</label>
                 <textarea name="answer_text" 
@@ -15,7 +15,7 @@ export const AddAnswer = ({isAuth}) => {
                     value={answerText}
                     required
                 />
-                <button onClick={sumbitAnswer}>Submit Question</button>
+                <button onClick={sumbitAnswer}>Submit</button>
             </div>
 
         );
