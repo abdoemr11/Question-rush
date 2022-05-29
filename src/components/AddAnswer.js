@@ -31,6 +31,9 @@ export const AddAnswer = ({isAuth, id}) => {
 
         );
     return (
-        <p className="login-warning">Login to add answers</p>
+        <div className="login-warning">
+            <a  href="/login">Login to add answers</a>
+        </div>
+
     )
 }

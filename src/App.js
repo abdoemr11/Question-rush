@@ -8,7 +8,7 @@ import {
 import { Login } from './components/Login';
 import { AddQuestion } from './components/AddQuestion';
 import { Questions } from './components/Questions';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from './firebase-config';
 function App() {
@@ -21,6 +21,7 @@ function App() {
 
     })
   }
+
   return (
     <Router >
     <div className="container navbar">
