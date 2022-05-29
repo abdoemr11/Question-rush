@@ -26,7 +26,7 @@ import { db } from "../firebase-config";
 
     }
     return (
-        <div>
+        <div className="add-question container">
             <label htmlFor="question_title">Question title</label>
             <input type="text" name="question_title" 
                 onChange={(e)=>setQuestionTitle(e.target.value)}
@@ -38,7 +38,7 @@ import { db } from "../firebase-config";
                 onChange={(e)=>setQuestionText(e.target.value)}
                 value={questionText}
             />
-            <button onClick={sumbitQuestion}>Submit Question</button>
+            <button onClick={sumbitQuestion}>Submit</button>
         </div>
     )
 };
