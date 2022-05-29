@@ -21,9 +21,10 @@ export const Questions = ({isAuth}) => {
                         ];
     const [questions, setQuestions] = useState([]);
     const [answers, setAnswers] = useState([]);
-    const questionReference = collection(db, "questions");
-    const answerReference = collection(db, "answers");
+
     useEffect(()=>{
+        const questionReference = collection(db, "questions");
+        const answerReference = collection(db, "answers");
         const getQuest = async()=>{
             const retrivedQuestions = await getDocs(questionReference);
             setQuestions(retrivedQuestions.docs.map((question) => ({...question.data(), id:question.id}) ));
@@ -35,7 +36,7 @@ export const Questions = ({isAuth}) => {
         getQuest();
         getAns();
 
-    }, []);
+    }, [answers, questions]);
     return(
         <div className="container">
         {
