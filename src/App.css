@@ -79,7 +79,21 @@ body {
 /* End  Question styling */
 
 /* Start Login styling */
-/* Start Login styling */
+.login {
+	text-align: center;
+	background-color: #eee;
+	border-radius: 10px;
+	padding: 10px;
+	color: var(--secondary-color);
+	width: 70%;
+	height: 300px;
+}
+.login button {
+	padding: 10px;
+	border: 1px solid var(--secondary-color);
+	color: var(--main-color);
+}
+/* End Login styling */
 .login-warning {
   color: red;
   text-align: center;

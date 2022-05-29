@@ -12,7 +12,8 @@ export const Login = ({setIsAuth}) => {
             })
     }
     return(
-        <div className="LoginPath">
+        <div className="login container">
+        <h1>Log in using your google account</h1>
             <button onClick={login_with_google}>Login with google</button>
         </div>
     )
