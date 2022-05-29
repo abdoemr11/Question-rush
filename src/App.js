@@ -27,16 +27,20 @@ function App() {
       <Link to="/">Home page</Link>
       {
         !isAuth ? <Link to="/login">Login</Link>
-        : <button onClick={logoutUser}>Log out</button>
+        :
+        <>
+          <button onClick={logoutUser}>Log out</button>
+          <Link to="/addquestion">Add Question</Link>
+
+        </> 
       }
       
-      <Link to="/addquestion">Add Question</Link>
 
       <Routes>
         <Route path="/" element={<Questions/>}/>
         <Route path="/login" element={<Login setIsAuth={setIsAuth}/>}/>
 
-        <Route path="/addquestion" element={<AddQuestion auth={auth}/>}/>
+        <Route path="/addquestion" element={<AddQuestion auth={auth} isAuth={isAuth}/>}/>
           
     
 

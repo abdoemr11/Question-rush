@@ -1,13 +1,17 @@
 import { addDoc, collection } from "firebase/firestore";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../firebase-config";
 
- export const AddQuestion = ({auth}) => {
+ export const AddQuestion = ({auth, isAuth}) => {
     const [questionTitle, setQuestionTitle] = useState('');
     const [questionText, setQuestionText] = useState('');
     const navigate = useNavigate();
+    useEffect(()=>{
+        if(!isAuth)
+            navigate("/");
 
+    }, []);
     const sumbitQuestion = async() => {
         const docRef = collection(db, "questions");
         await addDoc(docRef, {
