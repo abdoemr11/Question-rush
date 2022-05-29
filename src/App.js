@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -23,18 +22,19 @@ function App() {
     })
   }
   return (
-    <Router>
+    <Router >
+    <div className="container navbar">
       <Link to="/">Home page</Link>
-      {
-        !isAuth ? <Link to="/login">Login</Link>
-        :
-        <>
-          <button onClick={logoutUser}>Log out</button>
-          <Link to="/addquestion">Add Question</Link>
+        {
+          !isAuth ? <Link to="/login">Login</Link>
+          :
+          <>
+            <button onClick={logoutUser}>Log out</button>
+            <Link to="/addquestion">Add Question</Link>
 
-        </> 
-      }
-      
+          </> 
+        }
+    </div>
 
       <Routes>
         <Route path="/" element={<Questions/>}/>

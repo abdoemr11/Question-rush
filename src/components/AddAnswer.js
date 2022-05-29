@@ -20,6 +20,6 @@ export const AddAnswer = ({isAuth}) => {
 
         );
     return (
-        <p>Login to add answers</p>
+        <p className="login-warning">Login to add answers</p>
     )
 }

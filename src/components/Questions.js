@@ -5,6 +5,9 @@ import { Question } from "./Question";
 export const Questions = () => {
     const dummy_question = [{questionTitle: "this is question title", 
                             questionText: "are you good, my son", 
+                            id: 123},
+                            {questionTitle: "this is question title", 
+                            questionText: "are you good, my son", 
                             id: 123}];
     const dummy_answer = [{answerText: "this is question title", 
                             author:{ name: "abdo", id: 1}, 
@@ -29,7 +32,7 @@ export const Questions = () => {
 
     }, []);
     return(
-        <div>
+        <div className="container">
         {
             questions.map(question=>
                 <Question   key={question.id} 

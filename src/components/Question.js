@@ -4,7 +4,7 @@ import { Answer } from "./Answer";
 export const Question = ({question, answers}) =>{
 
     return(
-        <div>
+        <div className="question">
             <h1>{question.questionTitle}</h1>
             <div>
                 <p>{question.questionText}</p>
