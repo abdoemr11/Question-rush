@@ -21,4 +21,9 @@ TODO
 - `npm start` and enjoy
   
 ## TODO Features
-TODO
+- [ ] Refactor the backend
+  Firebase is good but the quota exceed message is a bit annoying, I want to to node js with mongodb and jwt authentication. 
+  I should first refactor the code that deals with the backend with React to its own module so that the migration will be smooth. 
+  `Backend` module now contains `getAllQuestions, getAllAnswers, submitAnswer`
+- [ ] 
+
