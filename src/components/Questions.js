@@ -1,7 +1,7 @@
-import { collection, getDocs } from "firebase/firestore";
+import {FireBase} from "../services/FireBase"
 import { useEffect, useState } from "react";
-import { db } from "../firebase-config";
 import { Question } from "./Question";
+import { async } from "@firebase/util";
 export const Questions = ({isAuth}) => {
     const dummy_question = [{questionTitle: "this is question title", 
                             questionText: "are you good, my son", 
@@ -23,19 +23,13 @@ export const Questions = ({isAuth}) => {
     const [answers, setAnswers] = useState([]);
 
     useEffect(()=>{
-        const questionReference = collection(db, "questions");
-        const answerReference = collection(db, "answers");
-        const getQuest = async()=>{
-            const retrivedQuestions = await getDocs(questionReference);
-            setQuestions(retrivedQuestions.docs.map((question) => ({...question.data(), id:question.id}) ));
-        }
-        const getAns = async() => {
-            const retrivedAnswers = await getDocs(answerReference);
-            setAnswers(retrivedAnswers.docs.map((ans) => ({...ans.data(), id:ans.id}) ));
-        }
-        getQuest();
-        getAns();
 
+        const getData = async()=>{
+            setQuestions(await FireBase.getAllQuestions());
+            setAnswers(await FireBase.getAllAnswers());
+    
+        }
+        getData()
     }, [answers, questions]);
     return(
         <div className="container">
