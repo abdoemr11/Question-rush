@@ -1,7 +1,6 @@
-import {FireBase} from "../services/FireBase"
+import {FireBase} from "../services/BackEnd"
 import { useEffect, useState } from "react";
 import { Question } from "./Question";
-import { async } from "@firebase/util";
 export const Questions = ({isAuth}) => {
     const dummy_question = [{questionTitle: "this is question title", 
                             questionText: "are you good, my son", 

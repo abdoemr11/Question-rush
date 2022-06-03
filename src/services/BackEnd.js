@@ -1,5 +1,5 @@
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase-config";
+import { addDoc, collection, getDocs } from "firebase/firestore";
+import { auth, db } from "../firebase-config";
 
 
 const getAllQuestions = async() => {
@@ -16,4 +16,15 @@ const getAllAnswers = async()=>{
     return retrivedAnswersDocs.docs.map((ans) => ({...ans.data(), id:ans.id}) );
 }
 
-export const FireBase = {getAllQuestions, getAllAnswers}
+const submitAnswer = async(questionId, answerText)=>{
+    const docRef = collection(db, "answers");
+    await addDoc(docRef, {
+        questionId,
+        answerText,
+        author: {
+            name: auth.currentUser.displayName, 
+            id: auth.currentUser.uid
+        }
+    })
+}
+export const FireBase = {getAllQuestions, getAllAnswers, submitAnswer}
