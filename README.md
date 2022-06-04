@@ -8,7 +8,9 @@ The real idea of the project came from the previous January final exam where we 
 The tech stack is simple I used `React` and `react-dom-router` with `firebase` for authentication and database.
 
 ## Screenshots
-TODO
+![log in with google](screenshots/loginWithGoogle.PNG)
+![add new question](screenshots/addNewQuestion.PNG)
+![add new Answer](screenshots/addNewAnswer.PNG)
 ## How to run
 - `npm install`
 - create your `.env` file with the following firebase keys: 
@@ -20,10 +22,15 @@ TODO
   - REACT_APP_FIREBASE_APP_ID
 - `npm start` and enjoy
   
-## TODO Features
-- [ ] Refactor the backend
-  Firebase is good but the quota exceed message is a bit annoying, I want to to node js with mongodb and jwt authentication. 
-  I should first refactor the code that deals with the backend with React to its own module so that the migration will be smooth. 
-  `Backend` module now contains `getAllQuestions, getAllAnswers, submitAnswer`
-- [ ] 
+## What to do next
+-  #### Refactor the backend  
+    Firebase is good but the quota exceed message is a bit annoying, The next step will be node js with mongodb and jwt authentication. 
+    I should first refactor the code that deals with the backend with React to its own module so that the migration will be smooth. 
+    `Backend` module now contains `getAllQuestions, getAllAnswers, submitAnswer`
+- #### Group specific questions
+  Right now contain a huge pile of questions, If would be better if we can arrange questions of same type or from same class into a speprate group say Physics group, Mathematics group.  
+  Or more generally allow user to create group of questions and invite other users into it may be there will be passcode or even other members can ask to join this group.
+
+- #### Interacting with answers
+  like voting or replying to them. 
 
