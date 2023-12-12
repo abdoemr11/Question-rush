@@ -1,3 +1,6 @@
+
+![qrush](https://github.com/abdoemr11/Question-rush/assets/47830671/fbf2aceb-157c-4419-99e4-259bbaa35857)
+
 A platform where students can ask and answer questions in more organized and simple way. 
 ## Motivation
 This project is made during MLHLateNightHack, due to Firebase limiting plan I wasn't able to upload my demo video on time. 
